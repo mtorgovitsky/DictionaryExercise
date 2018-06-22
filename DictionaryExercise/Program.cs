@@ -10,21 +10,22 @@ namespace DictionaryExercise
     {
         static void Main(string[] args)
         {
-            string str1 = "734325428374583475";
+            string str = "734325428374583475";
 
             Dictionary<int, int> dict = new Dictionary<int, int>();
 
-            int tempInt;
-            for (int i = str1.Length - 1; i >= 0; i--)
+            int temp1;
+
+            for (int i = str.Length - 1; i >= 0; i--)
             {
-                int.TryParse(str1[i].ToString(), out tempInt);
-                if (dict.ContainsKey(tempInt))
+                int.TryParse(str[i].ToString(), out temp1);
+                if (dict.ContainsKey(temp1))
                 {
-                    dict[tempInt]++;
+                    dict[temp1]++;
                 }
                 else
                 {
-                    dict.Add(tempInt, 1);
+                    dict.Add(temp1, 1);
                 }
             }
 
@@ -32,6 +33,21 @@ namespace DictionaryExercise
             {
                 Console.WriteLine($"Key: {member.Key}\tValue: {member.Value}");
             }
+
+            long l = 3274737547674527;
+            int counter = 0;
+            long temp2 = l % 10;
+            for (; l > 0; temp2 = l % 10)
+            {
+                if (temp2 == 7)
+                {
+                    counter++;
+                }
+                l -= temp2;
+                l /= 10;
+            }
+
+            Console.Write($"The 7 Number appears {counter} times\n");
         }
     }
 }
