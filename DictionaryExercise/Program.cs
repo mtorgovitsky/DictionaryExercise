@@ -10,14 +10,14 @@ namespace DictionaryExercise
     {
         static void Main(string[] args)
         {
-            string str = "734325428374583475";
+            string str1 = "734325428374583475";
 
             Dictionary<int, int> dict = new Dictionary<int, int>();
 
             int tempInt;
-            for (int i = str.Length - 1; i >= 0; i--)
+            for (int i = str1.Length - 1; i >= 0; i--)
             {
-                int.TryParse(str[i].ToString(), out tempInt);
+                int.TryParse(str1[i].ToString(), out tempInt);
                 if (dict.ContainsKey(tempInt))
                 {
                     dict[tempInt]++;
